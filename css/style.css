@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* background-color: #f1f1f1f1; */
+}
+
+body{
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p{
+  margin: 0;
+}
+
+section{
+  padding: 7em 0;
+}
+
+.container{
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+.split{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+.split > *{
+  flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin: var(--spacer, 2rem);
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color-text, #fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125em;
+  padding: .5em 1.5em;
+  background: var(--color-accent, indianred);
+  border-radius: .25em;
+  transition:
+    transform 250ms ease-in-out,
+    opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus{
+  transform: scale(1.1);
+  opacity: .9;
+}
+
+.primary-title{
+  font-size: 4rem;
+  font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title{
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  color: var(--color-section, rgb(157, 76, 76));
+  margin-bottom: 5rem ;
+}
+
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 15em 0;
+  background-image:
+    url('../assets/ch4.png'),
+    radial-gradient(#444, #111);
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /* background-size:contain; */
+}
+
+@supports not (background-blend-mode: multiply){
+  .hero {
+    background: #222;
+  }
+}
+
+.featured{
+  background-color: #eee;
+}
+
+.featured__item{
+  /* This display isn't necessarily */
+  /* display: block; */
+  position: relative;
+  transform: scale(.85);
+  transition: transform 250ms ease-in-out;
+}
+
+.featured__item:hover,
+.featured__item:focus{
+  transform: scale(1);
+}
